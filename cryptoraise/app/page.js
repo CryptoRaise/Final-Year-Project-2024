@@ -6,9 +6,8 @@ const page = () => {
   return (
     <>
       <Header />
-      <div>
-        page <hr />
-      </div>
+      <hr />
+      <div>page</div>
       <Footer />
     </>
   );
