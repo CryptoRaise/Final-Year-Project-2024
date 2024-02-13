@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import {FaFacebookF} from 'react-icons/fa';
 import {AiOutlineInstagram} from 'react-icons/ai';
@@ -5,7 +6,7 @@ import {BsWhatsapp} from 'react-icons/bs';
 
 const Footer = () => {
   return (
-    <div className="absolute bottom-0 w-[100%] bg-slate-200 border-t-grey border-t-2">
+    <div className="absolute bottom-0 w-[100%] bg-slate-200 border-t-grey border-t-2 text-slate-600">
       {/* Left side */}
       <div className="flex gap-3 justify-between m-3 text-lg font-bold items-center">
         <div className=" flex gap-3">

@@ -7,7 +7,8 @@ const page = () => {
   return (
     <div>
       <Header />
-        <div className=" flex flex-row gap-3">
+        <div className=" flex flex-auto gap-3">
+          <Cards/>
           <Cards/>
           <Cards/>
         </div>
