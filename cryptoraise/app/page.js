@@ -7,7 +7,7 @@ const page = () => {
     <>
       <Header />
       <hr />
-      <div>page</div>
+      <div style={{"backgroundColor":"gray"}}>Hello</div>
       <Footer />
     </>
   );
