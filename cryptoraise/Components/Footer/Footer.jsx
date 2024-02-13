@@ -10,7 +10,6 @@ const Footer = () => {
       <div className="flex gap-3 justify-between m-3 text-lg font-bold items-center">
         <div className=" flex gap-3">
           <div className=" flex gap-4 border-r-2 px-3 border-black">
-            <img className=" w-10 h-10 rounded-md bg-orange-400" />
             <p>CryptoRaise</p>
           </div>
           <div>
@@ -18,10 +17,10 @@ const Footer = () => {
           </div>
         </div>
         {/* Right side */}
-        <div className="flex gap-3">
-          <FaFacebookF className="hover:text-white cursor-pointer"/>
-          <AiOutlineInstagram className="hover:text-white cursor-pointer"/>
-          <BsWhatsapp className="hover:text-white cursor-pointer"/>
+        <div className="flex gap-10">
+          <FaFacebookF className="hover:text-white cursor-pointer w-6 h-6"/>
+          <AiOutlineInstagram className="hover:text-white cursor-pointer w-6 h-6"/>
+          <BsWhatsapp className="hover:text-white cursor-pointer w-6 h-6"/>
         </div>
       </div>
     </div>
