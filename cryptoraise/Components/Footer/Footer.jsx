@@ -9,7 +9,7 @@ const Footer = () => {
           <div className=" flex gap-4 border-r-2 px-3 border-black">
             <img className=" w-10 h-10 rounded-md bg-orange-400" />
             <p>CryptoRaise</p>
-          </div>
+          </div> 
           <div>
             <p className=" text-green-500">Copyright © 2023 www.etherHub.com</p>
           </div>

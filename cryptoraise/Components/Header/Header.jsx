@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import imgSource from "./Logo.png";
 
 const Header = () => {
   return (
@@ -7,7 +9,7 @@ const Header = () => {
       <ul className=" flex gap-10 justify-between items-baseline">
         <ul className=" flex gap-9 justify-evenly m-5 font-bold text-lg">
           <li>
-            <img className=" bg-red-400 h-8 w-8  rounded-md" src="" />
+            <Image className=" bg-red-400 h-8 w-9  rounded-md"  src={imgSource}/>
           </li>
           <li>About</li>
           <li>Organisations</li>
