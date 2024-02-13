@@ -7,9 +7,10 @@ const page = () => {
   return (
     <>
       <Header />
-      <div>
-        page <hr />
-      </div>
+        <div className=" flex flex-row gap-3">
+          <Cards/>
+          <Cards/>
+        </div>
       <Footer />
     </>
   );
