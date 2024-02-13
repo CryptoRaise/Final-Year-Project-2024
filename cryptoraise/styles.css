@@ -1,0 +1,16 @@
+.login {
+    background-color: rgb(43, 158, 43);
+}
+.login:hover {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+.left-elements:hover {
+    cursor: pointer;
+    color:rgb(73, 69, 69);
+}
+.search:hover
+.search:active {
+    border:2px solid rgb(51, 49, 49);
+}

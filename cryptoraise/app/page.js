@@ -7,10 +7,8 @@ const page = () => {
   return (
     <>
       <Header />
-      <div className=" flex flex-row gap-3">
-        <Cards/>
-        <Cards/>
-        <Cards/>
+      <div>
+        page <hr />
       </div>
       <Footer />
     </>
