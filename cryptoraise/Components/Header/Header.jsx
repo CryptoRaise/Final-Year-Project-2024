@@ -20,7 +20,7 @@ const Header = () => {
               src={imgSource}
             />
           </div>
-          <Link href="/about"><div className="left-elements text-lg text-slate-600" style={styles}>About</div></Link>
+          <Link href="/About"><div className="left-elements text-lg text-slate-600" style={styles}>About</div></Link>
           <Link href="/HIW"><div className="left-elements text-lg text-slate-600" style={styles}>How it Works</div></Link>
           <Link href="/Discover"><div className="left-elements text-lg text-slate-600" style={styles}>Discover</div></Link>
         </div>
@@ -32,14 +32,12 @@ const Header = () => {
         </div>
       </div>
       <div className="right" style={{ marginRight: "10px" }}>
-        <button
+        <Link href="/InitCamp"><button
           className="login border-x-2 border-y-2 bg-purple-500 rounded-3xl mr-2 p-2.5 font-bold text-white hover:bg-purple-800 cursor-pointer"
-          style={styles}
-        >Get Contribution</button>
-        <button
+          style={styles}>Get Contribution</button></Link>
+          <button
           className="login border-x-2 border-y-2 bg-blue-500 rounded-md p-2.5 font-bold text-white hover:bg-blue-600 cursor-pointer"
-          style={styles}
-        >
+          style={styles}>
           Login / Signup
         </button>
       </div>
