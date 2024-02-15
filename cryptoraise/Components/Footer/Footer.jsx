@@ -6,9 +6,9 @@ import {BsWhatsapp} from 'react-icons/bs';
 
 const Footer = () => {
   return (
-    <div className="absolute bottom-0 w-[100%] bg-slate-200 border-t-grey border-t-2 text-slate-600">
+    <div className="relative bottom-0 w-[100%] bg-slate-200 border-t-grey border-t-2 text-slate-600 p-3">
       {/* Left side */}
-      <div className="flex gap-3 justify-between m-3 text-lg font-bold items-center">
+      <div className="flex gap-3 justify-between mx-3 text-lg font-bold items-center">
         <div className=" flex gap-3">
           <div className=" flex gap-4 border-r-2 px-3 border-black">
             <p>CryptoRaise</p>
