@@ -6,7 +6,7 @@ import Footer from "@/Components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "CryptoRaise",
+  title: "CryptoRaise | Home",
   description: "Blockchain powered Crowdfunding Platform",
 };
 
