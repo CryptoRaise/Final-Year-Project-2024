@@ -3,7 +3,7 @@ import React from "react";
 import { Line } from "rc-progress";
 
 const Cards = ({ name }) => {
-  var random = Math.floor(Math.random() * 100);
+  const random = 10
   return (
     <div className=" w-[15rem] rounded-xl shadow-black shadow-2xl flex flex-col m-3 bg-white h-fit ">
       <img
@@ -15,12 +15,10 @@ const Cards = ({ name }) => {
       <p className=" m-1 font-serif p-2">
         This is the description of the card to be given
       </p>
-      {/* <div> */}
         <span className="relative left-0">{random}</span>
         <div className=" p-2 flex flex-row">
           <Line percent={random} strokeWidth={1} trailWidth={2} />
         </div>
-      {/* </div> */}
       <a
         href="#"
         className=" m-2 text-center w-[90%] bg-blue-500 rounded-md font-bold p-2 hover:bg-blue-600 text-white"
