@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="fixed flex justify-between items-center w-[100%] bg-slate-200 border-b-2 h-[65px]">
+    <div className="flex justify-between items-center w-[100%] bg-slate-200 border-b-2 h-[65px]">
       <div className="left flex justify-evenly">
         <div
           className="flex gap-5 justify-evenly font-bold text-[1rem]"
@@ -16,7 +16,11 @@ const Header = () => {
           <div className="left-elements">
             {/* To-do: Logo Updation */}
             <Link href="/">
-              <Image className=" h-8 w-9  rounded-md" src={imgSource} />
+              <Image
+                className=" h-8 w-9  rounded-md"
+                src={imgSource}
+                alt="Logo"
+              />
             </Link>
           </div>
           <Link href="/About">

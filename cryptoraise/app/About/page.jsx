@@ -1,6 +1,10 @@
 import React from "react";
+import Head from "next/head";
 
 const About = () => {
+  // <Head>
+  //   <title>Cryptoraise | About</title>
+  // </Head>
   return (
     <div>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
