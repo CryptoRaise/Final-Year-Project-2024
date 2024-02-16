@@ -5,7 +5,7 @@ const Cards = ({name}) => {
   return (
     <div className=' w-[15rem] rounded-xl shadow-black shadow-2xl flex flex-col m-3 bg-white h-fit '>
         <img 
-        className=' w-[100%] rounded-lg p-2'
+        className=' w-[100%] rounded-lg'
         alt='Campaign Image' 
         src='https://picsum.photos/200/150'></img>
         <h1 className=' m-1 font-bold text-lg font-sans p-2'>{name}</h1>
