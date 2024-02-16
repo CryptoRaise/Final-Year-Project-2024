@@ -6,9 +6,7 @@ import MainBody from "@/Components/MainBody";
 const page = () => {
   return (
     <div>
-      <Header />
-      <MainBody/>
-      <Footer />
+      <MainBody />
     </div>
   );
 };
