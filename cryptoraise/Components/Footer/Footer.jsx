@@ -1,12 +1,12 @@
-'use client'
+"use client";
 import React from "react";
-import {FaFacebookF} from 'react-icons/fa';
-import {AiOutlineInstagram} from 'react-icons/ai';
-import {BsWhatsapp} from 'react-icons/bs';
+import { FaFacebookF } from "react-icons/fa";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { BsWhatsapp } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="relative bottom-0 w-[100%] bg-slate-200 border-t-grey border-t-2 text-slate-600 p-3">
+    <div className="relative bottom-0 w-[100%] bg-white border-t-grey border-t-2 text-slate-600 p-3">
       {/* Left side */}
       <div className="flex gap-3 justify-between mx-3 text-lg font-bold items-center">
         <div className=" flex gap-3">
@@ -19,9 +19,9 @@ const Footer = () => {
         </div>
         {/* Right side */}
         <div className="flex gap-10">
-          <FaFacebookF className="hover:text-white cursor-pointer w-6 h-6"/>
-          <AiOutlineInstagram className="hover:text-white cursor-pointer w-6 h-6"/>
-          <BsWhatsapp className="hover:text-white cursor-pointer w-6 h-6"/>
+          <FaFacebookF className="hover:text-white cursor-pointer w-6 h-6" />
+          <AiOutlineInstagram className="hover:text-white cursor-pointer w-6 h-6" />
+          <BsWhatsapp className="hover:text-white cursor-pointer w-6 h-6" />
         </div>
       </div>
     </div>

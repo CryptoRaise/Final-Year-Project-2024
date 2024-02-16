@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center w-[100%] bg-slate-200 border-b-2 h-[65px]">
+    <div className="flex justify-between items-center w-[100%] bg-white border-b-2 h-[65px]">
       <div className="left flex justify-evenly">
         <div
           className="flex gap-5 justify-evenly font-bold text-[1rem]"
@@ -25,7 +25,7 @@ const Header = () => {
           </div>
           <Link href="/About">
             <div
-              className="left-elements text-lg text-slate-600"
+              className="left-elements text-md text-slate-600"
               style={styles}
             >
               About
@@ -33,7 +33,7 @@ const Header = () => {
           </Link>
           <Link href="/HIW">
             <div
-              className="left-elements text-lg text-slate-600"
+              className="left-elements text-md text-slate-600"
               style={styles}
             >
               How it Works
@@ -41,7 +41,7 @@ const Header = () => {
           </Link>
           <Link href="/Discover">
             <div
-              className="left-elements text-lg text-slate-600"
+              className="left-elements text-md text-slate-600"
               style={styles}
             >
               Discover
@@ -64,7 +64,7 @@ const Header = () => {
             className="login border-x-2 border-y-2 bg-purple-500 rounded-3xl mr-2 p-2.5 font-bold text-white hover:bg-purple-800 cursor-pointer"
             style={styles}
           >
-            Get Contribution
+            Start Project
           </button>
         </Link>
         <button
