@@ -67,14 +67,14 @@ const Header = () => {
       <div className="right" style={{ marginRight: "10px" }}>
         <Link href="/InitCamp">
           <button
-            className="login border-x-2 border-y-2 bg-purple-500 rounded-3xl mr-2 p-2.5 font-bold text-white hover:bg-purple-800 cursor-pointer"
+            className="button rounded p-3 font-bold m-2"
             style={styles}
           >
             Start Project
           </button>
         </Link>
         <button
-          className="login border-x-2 border-y-2 bg-blue-500 rounded-md p-2.5 font-bold text-white hover:bg-blue-600 cursor-pointer"
+          className="button rounded p-3 font-bold m-2"
           style={styles}
         >
           Login / Signup

@@ -24,7 +24,7 @@ const Card = ({ name }) => {
       </span>
       <Link
         href="#"
-        className=" m-2 text-center w-[90%] bg-blue-500 rounded-md font-bold p-2 hover:bg-blue-600 text-white">
+        className=" m-2 text-center w-[90%]  rounded-md font-bold p-2  button">
         Contribute
       </Link>
     </div>
