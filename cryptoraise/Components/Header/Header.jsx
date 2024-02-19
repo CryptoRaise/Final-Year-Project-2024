@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center w-[100%] bg-slate-200 border-b-2 h-[65px]">
+    <div className="flex justify-between items-center w-[100%] bg-slate-200 border-b-2 h-[65px] ">
       <div className="left flex justify-evenly">
         <div
           className="flex gap-5 justify-evenly font-bold text-[1rem]"
