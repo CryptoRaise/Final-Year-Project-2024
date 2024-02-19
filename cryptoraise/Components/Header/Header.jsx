@@ -49,7 +49,7 @@ const Header = () => {
       <Link href="/">
         <div className="mid relative left-[-150px]">
           <Image
-            className=" h-[100px] w-[350px] object-cover"
+            className=" h-[100px] w-[300px] object-cover"
             src={Logo}
             alt="Logo.png"
           />
