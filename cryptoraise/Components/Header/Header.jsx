@@ -13,16 +13,6 @@ const Header = () => {
         <div
           className="flex gap-5 justify-evenly font-bold text-[1rem] mt-7"
           style={{ marginLeft: "5px" }}>
-          <div className="left-elements">
-            {/* To-do: Logo Updation */}
-            {/* <Link href="/">
-              <Image
-                className=" h-8 w-9  rounded-md"
-                src={imgSource}
-                alt="Logo"
-              />
-            </Link> */}
-          </div>
           <Link href="/About">
             <div
               className="left-elements text-md text-slate-600"
