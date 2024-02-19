@@ -19,9 +19,9 @@ const Footer = () => {
         </div>
         {/* Right side */}
         <div className="flex gap-10">
-          <FaFacebookF className="hover:text-white cursor-pointer w-6 h-6" />
-          <AiOutlineInstagram className="hover:text-white cursor-pointer w-6 h-6" />
-          <BsWhatsapp className="hover:text-white cursor-pointer w-6 h-6" />
+          <FaFacebookF className="hover:text-black cursor-pointer w-6 h-6" />
+          <AiOutlineInstagram className="hover:text-black cursor-pointer w-6 h-6" />
+          <BsWhatsapp className="hover:text-black cursor-pointer w-6 h-6" />
         </div>
       </div>
     </div>
