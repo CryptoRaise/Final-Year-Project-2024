@@ -2,12 +2,9 @@
     cursor: pointer;
     color:black;
 }
-.search:hover
-.search:active {
-    border:2px solid rgb(51, 49, 49);
-}
-.search:focus {
+.search:focus{
     background-color: white;
+    border: white;
 }
 .button{
     border-color: #3498db;

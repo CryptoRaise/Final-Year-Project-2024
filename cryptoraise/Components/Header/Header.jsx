@@ -12,16 +12,6 @@ const Header = () => {
         <div
           className="flex gap-5 justify-evenly font-bold text-[1rem] mt-7"
           style={{ marginLeft: "5px" }}>
-          <div className="left-elements">
-            {/* To-do: Logo Updation */}
-            {/* <Link href="/">
-              <Image
-                className=" h-8 w-9  rounded-md"
-                src={imgSource}
-                alt="Logo"
-              />
-            </Link> */}
-          </div>
           <Link href="/About">
             <div
               className="left-elements text-md text-slate-600"
@@ -48,7 +38,7 @@ const Header = () => {
           </Link>
         </div>
         <div
-          className="bg-slate-100 flex rounded-md border-x-2 border-y-2 m-5 font-bold text-[1rem]"
+          className="bg-blue-100 flex rounded-md border-x-2 border-y-2 m-5 font-bold text-[1rem] "
           style={styles}
         >
           <input type="text" placeholder="Search.." className="search p-1" />
