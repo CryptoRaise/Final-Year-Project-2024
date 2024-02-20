@@ -2,9 +2,9 @@ import React from "react";
 
 const InitCamp = () => {
   return (
-    <div className="container m-auto h-[80vh]">
-      <h1 className="font-bold text-xl text-center my-4">Campaign Details</h1>
-      <div className="mx-auto flex">
+    <div className="container m-auto h-[80vh] border-blue-400 border-8 ">
+      <h1 className="font-bold text-xl text-center my-4 ">Campaign Details</h1>
+      <div className="mx-auto">
         <div className="px-2 w-1/2">
           <div className="mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
@@ -22,8 +22,8 @@ const InitCamp = () => {
         </div>
         <div className="px-2 w-1/2">
           <div className="mb-4">
-            <label htmlFor="email" className="leading-7 text-sm text-gray-600">
-              Email
+            <label htmlFor="text" className="leading-7 text-sm text-gray-600">
+              Description
             </label>
             <input
               // onChange={handleChange}
@@ -36,34 +36,19 @@ const InitCamp = () => {
           </div>
         </div>
       </div>
-      <div className="px-2 w-full">
-        <div className="mb-4">
-          <label htmlFor="address" className="leading-7 text-sm text-gray-600">
-            Address
-          </label>
-          <textarea
-            className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            name="address"
-            // onChange={handleChange}
-            // value={address}
-            id="address"
-            cols="30"
-            rows="2"
-          ></textarea>
-        </div>
-      </div>
-      <div className="mx-auto flex">
+      <div className="mx-auto ">
         <div className="px-2 w-1/2">
           <div className="mb-4">
-            <label htmlFor="phone" className="leading-7 text-sm text-gray-600">
-              Phone
+            <label htmlFor="amount" className="leading-7 text-sm text-gray-600">
+              Amount to be raised
             </label>
             <input
-              type="phone"
+              type="number"
+              min={1}
               // onChange={handleChange}
               // value={phone}
-              id="phone"
-              name="phone"
+              id="amount"
+              name="number"
               className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
@@ -71,15 +56,15 @@ const InitCamp = () => {
         <div className="px-2 w-1/2">
           <div className="mb-4">
             <label
-              htmlFor="pincode"
+              htmlFor="image"
               className="leading-7 text-sm text-gray-600"
             >
-              Pincode
+              Select project's image
             </label>
             <input
-              type="text"
-              id="pincode"
-              name="pincode"
+              type="file"
+              id="prj-img"
+              name="prj-img"
               // onChange={handleChange}
               // value={pincode}
               className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -87,38 +72,39 @@ const InitCamp = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto flex">
+      <div className="mx-auto ">
         <div className="px-2 w-1/2">
           <div className="mb-4">
-            <label htmlFor="state" className="leading-7 text-sm text-gray-600">
-              State
+            <label htmlFor="category" className="leading-7 text-sm text-gray-600">
+              Category
             </label>
             <input
               type="text"
               // value={state}
               // onChange={handleChange}
-              id="state"
-              name="state"
+              id="category"
+              name="category"
               className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
         </div>
         <div className="px-2 w-1/2">
           <div className="mb-4">
-            <label htmlFor="city" className="leading-7 text-sm text-gray-600">
-              City
+            <label htmlFor="country" className="leading-7 text-sm text-gray-600">
+              Country of Origin
             </label>
             <input
               type="text"
               // onChange={handleChange}
               // value={city}
-              id="city"
-              name="city"
+              id="country"
+              name="country"
               className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
         </div>
       </div>
+      <div className="btn cursor-pointer bg-blue-500">Submit</div>
     </div>
   );
 };

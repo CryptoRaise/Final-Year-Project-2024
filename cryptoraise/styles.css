@@ -1,19 +1,25 @@
 .left-elements:hover {
     cursor: pointer;
-    color:black;
+    color: black;
 }
-.search:focus{
+
+.search:focus {
     background-color: white;
     border: white;
 }
-.button{
+
+.button {
     border-color: #3498db;
     color: #fff;
     box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
     transition: all 150ms ease-in-out;
-    
+
     &:hover {
         box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
         color: #3498db;
     }
+}
+
+.brightness {
+    filter: brightness(100%)
 }
