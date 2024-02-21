@@ -63,12 +63,14 @@ const Header = () => {
             Start Project
           </button>
         </Link>
+        <Link href="/LogIn">
         <button
           className="button rounded p-3 font-bold m-2"
           style={styles}
         >
           Login / Signup
         </button>
+        </Link>
       </div>
     </div>
   );
