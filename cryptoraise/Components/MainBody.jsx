@@ -1,18 +1,31 @@
 import React from "react";
 import Card from "./Card";
 import Link from "next/link";
+import styles from "../styles.css";
 const MainBody = () => {
   return (
     <div>
-      <div className="project-image w-[100%] h-[25rem]" style={{ backgroundImage: "url(https://picsum.photos/900/300)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%", objectFit: "cover" }}>
-        {/* To-do : Description  */}
-        <div className="font-bold text-white text-3xl" style={{ filter: "brightness(100%)" }}>Check</div>
-        <div className="btn-container flex gap-6 justify-center relative top-[45%]" style={{ filter: "brightness(100%)" }}>
+      <div className="project-image w-[100%] h-[25rem]" style={{ styles }}>
+        <div className="check font-bold text-white text-3xl" style={{ styles }}>
+          Check
+        </div>
+        <div className="btn-container flex gap-6 justify-center relative top-[45%]">
           <div>
-            <Link href = "/InitCamp"><button className="rounded p-3 font-bold bg-gradient-to-r from-cyan-500 to-blue-800  text-white hover:bg-blue-800" style={{ filter: "brightness(100%)" }}>Start a Project</button></Link>
+            <Link href="/InitCamp">
+              <button
+                className="btn rounded p-3 font-bold text-white"
+                style={{ styles }}
+              >
+                Start a Project
+              </button>
+            </Link>
           </div>
           <div>
-            <Link href = "/RunningProjects"><button className="rounded p-3 font-bold bg-gradient-to-r from-blue-800 to-cyan-500  text-white hover:bg-blue-800 " style={{ filter: "brightness(100%)" }}>Contribute a Project</button></Link>
+            <Link href="/RunningProjects">
+              <button className="btn rounded p-3 font-bold text-white">
+                Contribute a Project
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -26,5 +39,3 @@ const MainBody = () => {
 };
 
 export default MainBody;
-
-

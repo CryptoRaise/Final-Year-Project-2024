@@ -37,7 +37,7 @@ const LogIn = () => {
               className="w-full border-b-4 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
-          <div className="button text-center p-3 rounded w-[30%] translate-x-[120%] font-bold">
+          <div className="button text-center p-3 rounded w-[30%] m-auto font-bold">
             Submit
           </div>
           <div className=" flex gap-3 justify-center m-5">

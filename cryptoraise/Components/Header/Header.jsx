@@ -11,7 +11,8 @@ const Header = () => {
       <div className="left flex justify-evenly">
         <div
           className="flex gap-5 justify-evenly font-bold text-[1rem] mt-7"
-          style={{ marginLeft: "5px" }}>
+          style={{ marginLeft: "5px" }}
+        >
           <Link href="/About">
             <div
               className="left-elements text-md text-slate-600"
@@ -56,20 +57,14 @@ const Header = () => {
       </Link>
       <div className="right" style={{ marginRight: "10px" }}>
         <Link href="/InitCamp">
-          <button
-            className="button rounded p-3 font-bold m-2"
-            style={styles}
-          >
+          <button className="button rounded p-3 font-bold m-2" style={styles}>
             Start Project
           </button>
         </Link>
         <Link href="/LogIn">
-        <button
-          className="button rounded p-3 font-bold m-2"
-          style={styles}
-        >
-          Login / Signup
-        </button>
+          <button className="button rounded p-3 font-bold m-2" style={styles}>
+            Login / Signup
+          </button>
         </Link>
       </div>
     </div>

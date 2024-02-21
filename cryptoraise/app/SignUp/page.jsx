@@ -40,7 +40,7 @@ const Signup = () => {
               className=" w-[90%] border-b-2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 transition-colors duration-200 ease-in-out"
             />
             <div>
-              <button className="p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700">
+              <button className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700">
                 Verify
               </button>
             </div>
@@ -65,7 +65,7 @@ const Signup = () => {
                 className=" w-[90%] border-b-2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 transition-colors duration-200 ease-in-out"
               />
               <div>
-                <button className="p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700">
+                <button className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700">
                   Verify
                 </button>
               </div>
@@ -90,7 +90,7 @@ const Signup = () => {
               className="w-full border-b-2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
-          <div className="button text-center p-3 rounded w-[30%] translate-x-[120%] font-bold">
+          <div className="button text-center p-3 rounded w-[25%] m-auto font-bold">
             Submit
           </div>
         </div>
