@@ -17,7 +17,7 @@ const Card = ({ name }) => {
         This is the description of the card to be given
       </p>
       <span>
-        <span className="font-bold text-[0.75rem] relative justify-end">{random}%</span>
+        <span className="font-bold text-[0.75rem] place-self-end">{random}%</span>
         <span className="p-2 pt-0 flex">
           <Line percent={random} strokeWidth={1} trailWidth={2} />
         </span>

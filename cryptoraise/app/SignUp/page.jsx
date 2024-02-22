@@ -1,7 +1,11 @@
-import React from "react";
+"use client"
+import React,{ useState } from "react";
 import Link from "next/link";
+import Modal from "@/Components/Modal";
+
 
 const Signup = () => {
+  const [showModal, setshowModal] = useState(false)
   return (
     <div className=" my-[5%]">
       <div className="container h-[full] w-[50%] m-auto p-3 bg-white">
@@ -40,9 +44,10 @@ const Signup = () => {
               className=" w-[90%] border-b-2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 transition-colors duration-200 ease-in-out"
             />
             <div>
-              <button className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700">
+              <button className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700" onClick={() => setshowModal(true)}>
                 Verify
               </button>
+              {showModal && <Modal onClose = {() => setshowModal(false)}/>}
             </div>
           </div>
         </div>
@@ -65,9 +70,10 @@ const Signup = () => {
                 className=" w-[90%] border-b-2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 transition-colors duration-200 ease-in-out"
               />
               <div>
-                <button className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700">
+                <button className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700 " onClick={() => setshowModal(true)}>
                   Verify
                 </button>
+                {showModal && <Modal onClose = {() => setshowModal(false)}/>}
               </div>
             </div>
           </div>
