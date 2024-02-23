@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
         className={inter.className}
         style={{ backgroundColor: "rgb(247 242 242)" }}
       >
-        <Header />
+        {/* <Header /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

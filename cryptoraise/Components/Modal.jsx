@@ -1,17 +1,17 @@
 import Link from "next/link";
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 const Modal = ({ purpose, closeModal }) => {
 
   const [seconds, setSeconds] = useState(30);
-  const [Show, setShow] = useState(true)
+  const [Show, setShow] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSeconds(prevSeconds => {
+      setSeconds((prevSeconds) => {
         if (prevSeconds === 0) {
           clearInterval(timer);
-          setShow(false)
+          setShow(false);
           return prevSeconds;
         }
         return prevSeconds - 1;

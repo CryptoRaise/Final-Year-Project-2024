@@ -4,10 +4,19 @@ import Link from "next/link";
 import styles from "../styles.css";
 const MainBody = () => {
   return (
-    <div>
+    <div className="MainBody">
       <div className="project-image w-[100%] h-[25rem]" style={{ styles }}>
         <div className="flex flex-col gap-2 justify-around">
-          <div className="check font-bold text-white items-center" style={{ styles , width: '29%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>
+          <div
+            className="check font-bold text-white items-center"
+            style={{
+              styles,
+              width: "29%",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+            }}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
             eveniet ipsum autem beatae, sint sapiente sit maxime aspernatur
             iste, minus dolorem numquam ut aperiam nisi veniam asperiores quidem
