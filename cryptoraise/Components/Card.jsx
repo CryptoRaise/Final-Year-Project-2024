@@ -4,9 +4,9 @@ import { Line } from "rc-progress";
 import Link from "next/link";
 
 const Card = ({ name }) => {
-  var random = 10;
+  var random = 100;
   return (
-    <div className=" w-[15rem] rounded-xl shadow-black shadow-2xl flex flex-col m-3 bg-white h-fit ">
+    <div className=" w-[15rem] rounded-xl shadow-black shadow-2xl flex flex-col m-3 bg-white h-fit">
       <img
         className=" w-[100%] rounded-lg"
         alt="Campaign Image"
@@ -16,15 +16,14 @@ const Card = ({ name }) => {
       <p className=" m-1 font-serif p-2">
         This is the description of the card to be given
       </p>
-      <span>
-        <span className="font-bold text-[0.75rem] place-self-end">{random}%</span>
-        <span className="p-2 pt-0 flex">
-          <Line percent={random} strokeWidth={1} trailWidth={2} />
-        </span>
+      <span className="font-bold text-[0.75rem] self-end mr-2">{random}%</span>
+      <span className="p-2 pt-0 flex">
+        <Line percent={random} strokeWidth={1} trailWidth={2} />
       </span>
       <Link
         href="#"
-        className=" m-2 text-center w-[90%]  rounded-md font-bold p-2  button">
+        className=" m-2 text-center w-[90%]  rounded-md font-bold p-2  button"
+      >
         Contribute
       </Link>
     </div>

@@ -36,7 +36,11 @@
 
 .check {
     position: relative;
-    z-index: 1;
+    width: 90%;
+    margin: auto;
+    top: 40%;
+    border: 2px solid black;
+    outline: 1px solid white;
 }
 
 .btn {

@@ -1,11 +1,23 @@
-"use client"
-import React,{ useState } from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Modal from "@/Components/Modal";
 
-
 const Signup = () => {
-  const [showModal, setshowModal] = useState(false)
+  const [showModal, setshowModal] = useState(false);
+  const [modalName, setModalName] = useState();
+  const closeModal = () => {
+    setModalName();
+    setshowModal(false);
+  };
+  const handleEmailClick = (e) => {
+    setModalName("email address");
+    setshowModal(true);
+  };
+  const handleContactClick = (e) => {
+    setModalName("contact number");
+    setshowModal(true);
+  };
   return (
     <div className=" my-[5%]">
       <div className="container h-[full] w-[50%] m-auto p-3 bg-white">
@@ -32,7 +44,6 @@ const Signup = () => {
           <label htmlFor="text" className="text-sm text-gray-600">
             Email
           </label>
-          {/* To-do: Email Vefication popup */}
           <div className=" flex flex-row gap-3">
             <input
               // onChange={handleChange}
@@ -44,17 +55,22 @@ const Signup = () => {
               className=" w-[90%] border-b-2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 transition-colors duration-200 ease-in-out"
             />
             <div>
-              <button className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700" onClick={() => setshowModal(true)}>
+              <button
+                className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700"
+                onClick={handleEmailClick}
+              >
                 Verify
               </button>
-              {showModal && <Modal onClose = {() => setshowModal(false)}/>}
+              {showModal && (
+                <Modal purpose={modalName} closeModal={closeModal} />
+              )}
             </div>
           </div>
         </div>
         <div className="px-2">
           <div className="mb-4">
             <label
-              htmlFor="category"
+              htmlFor="contact"
               className="leading-7 text-sm text-gray-600"
             >
               Contact
@@ -70,10 +86,15 @@ const Signup = () => {
                 className=" w-[90%] border-b-2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 transition-colors duration-200 ease-in-out"
               />
               <div>
-                <button className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700 " onClick={() => setshowModal(true)}>
+                <button
+                  className="cursor-pointer p-2 rounded bg-blue-400 text-white font-bold hover:bg-blue-700 "
+                  onClick={handleContactClick}
+                >
                   Verify
                 </button>
-                {showModal && <Modal onClose = {() => setshowModal(false)}/>}
+                {showModal && (
+                  <Modal purpose={modalName} closeModal={closeModal} />
+                )}
               </div>
             </div>
           </div>
