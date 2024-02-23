@@ -35,12 +35,9 @@
 }
 
 .check {
-    position: relative;
-    width: 90%;
+    width: 100%;
     margin: auto;
-    top: 40%;
-    border: 2px solid black;
-    outline: 1px solid white;
+    text-align: justify;
 }
 
 .btn {
