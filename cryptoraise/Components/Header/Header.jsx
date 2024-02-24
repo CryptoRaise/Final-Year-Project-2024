@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Logo from "../../assets/CryptoRaiseLogo.png";
@@ -7,8 +8,8 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header>
-      <div className="flex justify-between items-center w-[100%] bg-white border-b-2">
+    <header className="h-auto sticky top-0 opacity bg-white" style={{zIndex: 100 }}>
+      <div className="flex justify-between items-center w-[100%] border-b-2" style={{styles}}>
         <div className="left flex justify-evenly">
           <div
             className="flex gap-5 justify-evenly font-bold text-[1rem] mt-7"
