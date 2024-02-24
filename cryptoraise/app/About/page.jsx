@@ -3,7 +3,7 @@ import Head from "next/head";
 
 const About = () => {
   return (
-    <div className="h-[80vh] m-[1%] bg-white">
+    <div className="h-[100vh] m-[1%] bg-white">
       <h1 className="text-center font-bold text-2xl p-5">About Us</h1>
       <p className="p-5">
         Lorem Ipsum is simply dummy text of the printing and typesetting
