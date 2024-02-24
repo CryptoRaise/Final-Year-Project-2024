@@ -46,10 +46,13 @@ const MainBody = () => {
           </div>
         </div>
       </div>
-      <div className=" flex flex-auto gap-3 cards-display items-center justify-center my-[12%]">
+      <div className=" grid grid-cols-3 gap-6 ml-[12%] my-[3%]">
         <Card name={"Treatment of cancer"} />
         <Card name={"Life-style Fit Club"} />
         <Card name={"Renewable Energy"} />
+        <Card name={"Green Environment"} />
+        <Card name={"Sustainable Development"} />
+        <Card name={"Earthquake Relief"} />
       </div>
     </div>
   );

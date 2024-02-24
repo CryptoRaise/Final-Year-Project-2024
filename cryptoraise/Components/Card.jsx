@@ -6,7 +6,7 @@ import Link from "next/link";
 const Card = ({ name }) => {
   var random = 100;
   return (
-    <div className=" w-[15rem] rounded-xl shadow-black shadow-2xl flex flex-col m-3 bg-white h-fit">
+    <div className=" w-[18rem] rounded-xl shadow-black shadow-2xl flex flex-col bg-white h-fit">
       <img
         className=" w-[100%] rounded-lg"
         alt="Campaign Image"
