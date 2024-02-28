@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import { Line } from "rc-progress";
-import Link from "next/link";
-import Image from "next/image";
 
 const Card = ({ name }) => {
   var random = 100;
@@ -21,12 +19,12 @@ const Card = ({ name }) => {
       <span className="p-2 pt-0 flex">
         <Line percent={random} strokeWidth={1} trailWidth={2} />
       </span>
-      <Link
+      {/* <Link
         href="#"
         className=" m-2 text-center w-[90%]  rounded-md font-bold p-2  button"
       >
         Contribute
-      </Link>
+      </Link> */}
     </div>
   );
 };
