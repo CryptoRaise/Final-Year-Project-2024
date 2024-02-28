@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-import styles from "../styles.css";
 import Cards from "./Cards/Cards";
+import ImageBar from "./ImageBar/ImageBar";
 const MainBody = () => {
   return (
     <div className="MainBody">
+      <ImageBar />
       <Cards />
     </div>
   );
