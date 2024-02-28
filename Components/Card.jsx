@@ -2,16 +2,17 @@
 import React from "react";
 import { Line } from "rc-progress";
 import Link from "next/link";
+import Image from "next/image";
 
 const Card = ({ name }) => {
   var random = 100;
   return (
-    <div className=" w-[18rem] rounded-xl shadow-black shadow-2xl flex flex-col bg-white h-fit">
+    <div className=" w-[25rem] rounded-2xl shadow-black shadow-2xl flex flex-col bg-white">
       <img
-        className=" w-[100%] rounded-lg"
+        className=" w-[100%] h-[40%] rounded-t-2xl"
         alt="Campaign Image"
         src="https://picsum.photos/200/150"
-      ></img>
+      />
       <h1 className=" m-1 font-bold text-lg font-sans p-2">{name}</h1>
       <p className=" m-1 font-serif p-2">
         This is the description of the card to be given

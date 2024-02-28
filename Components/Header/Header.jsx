@@ -3,14 +3,18 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../assets/CryptoRaiseLogo.png";
 import { styles } from "../../styles.css";
-import { IoSearchOutline } from "react-icons/io5";
-import { IoIosSearch } from "react-icons/io";
 import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="h-auto sticky top-0 opacity bg-white" style={{ zIndex: 100 }}>
-      <div className="flex justify-between items-center w-[100%] border-b-2" style={{ styles }}>
+    <header
+      className="h-auto sticky top-0 border-b-2 opacity bg-white"
+      style={{ zIndex: 100 }}
+    >
+      <div
+        className="flex justify-between items-center w-[100%] "
+        style={{ styles }}
+      >
         <div className="left flex justify-evenly">
           <div
             className="flex gap-5 justify-evenly font-bold text-[1rem] mt-7"
@@ -37,7 +41,7 @@ const Header = () => {
             className="bg-blue-100 flex rounded-md border-x-2 border-y-2 m-5 font-bold text-[1rem] "
             style={styles}
           >
-          {/* To-do: borders of search icon to be  removed*/}
+            {/* To-do: borders of search icon to be  removed*/}
             <svg
               className="bg-white border-white border-2 h-10 w-10 px-2 py-3 font-bold cursor-pointer"
               viewBox="0 0 1024 1024"
@@ -62,14 +66,10 @@ const Header = () => {
             </span>
           </Link>
           <Link href="/LogIn">
-            <span className="text-slate-600 p-5 font-bold">
-              Log In
-            </span>
+            <span className="text-slate-600 p-5 font-bold">Log In</span>
           </Link>
           <Link href="/SignUp">
-            <span className="text-slate-600 font-bold">
-              Sign Up
-            </span>
+            <span className="text-slate-600 font-bold">Sign Up</span>
           </Link>
         </div>
       </div>
