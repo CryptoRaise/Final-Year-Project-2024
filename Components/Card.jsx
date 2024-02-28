@@ -19,12 +19,6 @@ const Card = ({ name }) => {
       <span className="p-2 pt-0 flex">
         <Line percent={random} strokeWidth={1} trailWidth={2} />
       </span>
-      {/* <Link
-        href="#"
-        className=" m-2 text-center w-[90%]  rounded-md font-bold p-2  button"
-      >
-        Contribute
-      </Link> */}
     </div>
   );
 };
