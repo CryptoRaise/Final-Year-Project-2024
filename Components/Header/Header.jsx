@@ -8,7 +8,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header
-      className="h-auto sticky top-0 border-b-2 opacity bg-white"
+      className="px-5 h-auto sticky top-0 border-b-2 opacity bg-white"
       style={{ zIndex: 100 }}
     >
       <div
