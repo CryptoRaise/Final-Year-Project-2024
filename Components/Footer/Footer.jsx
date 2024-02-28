@@ -3,7 +3,7 @@ import React from "react";
 import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { BsWhatsapp } from "react-icons/bs";
-import Logo from "../../assets/CryptoRaiseLogo.png";
+import Logo from "/public/CryptoRaiseLogo.png";
 import Image from "next/image";
 import Link from "next/link";
 

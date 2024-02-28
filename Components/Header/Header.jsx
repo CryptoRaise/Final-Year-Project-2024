@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Logo from "../../assets/CryptoRaiseLogo.png";
+import Logo from "/public/CryptoRaiseLogo.png";
+// import { FaSearch } from "react-icons/fa";  
 import { styles } from "../../styles.css";
 import Link from "next/link";
 
@@ -9,7 +10,7 @@ const Header = () => {
   return (
     <header
       className="px-5 h-auto sticky top-0 border-b-2 opacity bg-white"
-      style={{ zIndex: 100 }}
+      style={{ zIndex: 1 }}
     >
       <div
         className="flex justify-between items-center w-[100%] "
