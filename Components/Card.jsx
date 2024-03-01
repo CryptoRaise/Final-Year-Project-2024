@@ -5,7 +5,7 @@ import { Line } from "rc-progress";
 const Card = ({ name }) => {
   var random = 100;
   return (
-    <div className=" w-[25rem] rounded-2xl shadow-black shadow-2xl flex flex-col bg-white">
+    <div className=" w-[100%] rounded-2xl shadow-black shadow-2xl flex flex-col bg-white">
       <img
         className=" w-[100%] h-[40%] rounded-t-2xl"
         alt="Campaign Image"
