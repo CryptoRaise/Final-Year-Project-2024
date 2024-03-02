@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const LogIn = () => {
   return (
-    <div className=" my-[6%]">
+    <div className="py-[6%]">
       <div className="container h-[50%] w-[35%] m-auto p-3 bg-white">
         <h1 className="font-bold text-3xl my-4 text-center text-slate-600">
           Login

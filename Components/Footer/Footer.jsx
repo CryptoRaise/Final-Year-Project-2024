@@ -22,7 +22,9 @@ const Footer = () => {
               />
             </div>
           </Link>
-          <div className="text-[1rem]">Copyright © 2023 www.etherHub.com</div>
+          <div className="text-[1rem]">
+            Copyright © 2023 www.cryptoraise.com
+          </div>
           <div className="flex gap-10">
             <FaFacebookF className="hover:text-black cursor-pointer w-6 h-6" />
             <AiOutlineInstagram className="hover:text-black cursor-pointer w-6 h-6" />
