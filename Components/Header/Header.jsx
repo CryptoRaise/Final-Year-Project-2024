@@ -10,18 +10,19 @@ const Header = () => {
       style={{ zIndex: 1 }}
     >
       <div className="flex justify-between items-center hover:cursor-pointer">
-        <div className="flex gap-5 justify-evenly font-bold text-md text-slate-600 ">
-          <Link href="/HIW">
-            <div className="hover:text-black">Work Mechanism</div>
-          </Link>
-          <Link href="/Discover">
-            <div className="hover:text-black">Discover</div>
-          </Link>
-          <div className="font-bold hover:text-black mt-[2px]">
-            <FaSearch />
+        <div className="flex justify-evenly text-slate-600 ">
+          <div className="flex gap-5 justify-evenly font-bold text-md">
+            <Link href="/HIW">
+              <div className="hover:text-black">Work Mechanism</div>
+            </Link>
+            <Link href="/Discover">
+              <div className="hover:text-black">Discover</div>
+            </Link>
+            <div className="font-bold hover:text-black mt-[2px]">
+              <FaSearch />
+            </div>
           </div>
         </div>
-
         <Link href="/">
           <div className="mid">
             <span className=" font-bold text-5xl ">CryptoRaise</span>

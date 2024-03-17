@@ -7,7 +7,7 @@ import Time from "./icons/time";
 const Card = ({ name }) => {
   var random = 100;
   return (
-    <div className=" rounded-2xl overflow-hidden bg-white hover:-translate-y-3 hover:shadow-2xl hover:shadow-black hover:transition-all duration-500 text-slate-600">
+    <div className="rounded-2xl overflow-hidden bg-white hover:-translate-y-3 hover:shadow-2xl hover:shadow-black hover:transition-all duration-500 text-slate-600">
       <div>
         <Image  src={'/img0.jpg'} width={365} height={80}/>
       </div>

@@ -9,8 +9,8 @@ const MainBody = () => {
     <div className="MainBody">
       <ImageBar />
       <Cards name="Recommended Projects" />
-      <div className=" w-full h-96 my-10">
-        <img src="./banner.jpg" className="w-full h-full object-c"/>
+      <div className=" w-full h-96 mt-24 mb-4">
+        <img src="./banner.jpg" className="w-full h-full object-c" alt="Banner"/>
       </div>
       <Cards name="Featured Projects" />
       <div className="my-20 font-medium px-9">
