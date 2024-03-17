@@ -1,21 +1,19 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Logo from "/public/CryptoRaiseLogo.png";
 import { FaSearch } from "react-icons/fa";
 import Link from "next/link";
 
 const Header = () => {
   return (
     <header
-      className="px-5 h-auto sticky top-0 border-b-2 opacity bg-white w-[100%] text-slate-600"
+      className="px-5 h-auto sticky top-0 border-b-2 opacity bg-white w-[100%] text-slate-600 py-4"
       style={{ zIndex: 1 }}
     >
-      <div className="flex justify-between items-center hover:cursor-pointer hover:text-black">
+      <div className="flex justify-between items-center hover:cursor-pointer">
         <div className="flex justify-evenly text-slate-600 ">
           <div className="flex gap-5 justify-evenly font-bold text-md">
             <Link href="/HIW">
-              <div className="hover:text-black">Our Work Mechanism</div>
+              <div className="hover:text-black">Work Mechanism</div>
             </Link>
             <Link href="/Discover">
               <div className="hover:text-black">Discover</div>
@@ -27,11 +25,7 @@ const Header = () => {
         </div>
         <Link href="/">
           <div className="mid">
-            <Image
-              className=" h-[75px] w-[240px] object-cover"
-              src={Logo}
-              alt="Logo"
-            />
+            <span className=" font-bold text-5xl ">CryptoRaise</span>
           </div>
         </Link>
         <div className="right">

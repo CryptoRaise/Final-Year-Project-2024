@@ -3,33 +3,52 @@ import React from "react";
 import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { BsWhatsapp } from "react-icons/bs";
-import Logo from "/public/CryptoRaiseLogo.png";
-import Image from "next/image";
-import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="relative bottom-0 w-[100%] bg-white border-t-grey border-t-2 text-slate-600 p-3">
-        {/* Left side */}
-        <div className="flex gap-3 justify-between mx-3 text-lg font-bold items-center">
-          <Link href="/">
-            <div>
-              <Image
-                className="h-[45px] w-[200px] object-cover"
-                src={Logo}
-                alt="Logo.png"
-              />
-            </div>
-          </Link>
-          <div className="text-[1rem]">
-            Copyright © 2023 www.cryptoraise.com
+    <footer className=" border-t-2 border-slate-100 text-slate-600 bg-white">
+      <div className="grid grid-cols-3 max-w-5xl mx-auto mt-10">
+        <div>
+          <h1 className=" font-bold text-xl uppercase">About</h1>
+          <div>
+            <p>About us</p>
+            <p>Our charter</p>
+            <p>Stats</p>
+            <p>Press</p>
+            <p>Jobs</p>
           </div>
-          <div className="flex gap-10">
-            <FaFacebookF className="hover:text-black cursor-pointer w-6 h-6" />
-            <AiOutlineInstagram className="hover:text-black cursor-pointer w-6 h-6" />
-            <BsWhatsapp className="hover:text-black cursor-pointer w-6 h-6" />
+        </div>
+        <div>
+          <h1 className=" font-bold text-xl uppercase">Support</h1>
+          <div>
+            <p>Help Center</p>
+            <p>Our Rules</p>
+            <p>Creator Resources</p>
+            <p>Forward Funds</p>
+            <p>Brand assets</p>
           </div>
+        </div>
+        <div>
+          <h1 className=" font-bold text-xl uppercase">More from CryptoRaise</h1>
+          <div>
+            <p>Newsletters</p>
+            <p>Kickstarter Project Updates</p>
+            <p>The Creative Independent</p>
+            <p>Mobile apps</p>
+            <p>Research</p>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-between p-10">
+        <div>
+        </div>
+        <div className="text-[1rem] text-center font-bold text-xl">
+          Copyright © 2024 www.cryptoraise.com
+        </div>
+        <div className="flex gap-10">
+          <FaFacebookF className="hover:text-black cursor-pointer w-6 h-6" />
+          <AiOutlineInstagram className="hover:text-black cursor-pointer w-6 h-6" />
+          <BsWhatsapp className="hover:text-black cursor-pointer w-6 h-6" />
         </div>
       </div>
     </footer>
