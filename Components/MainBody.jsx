@@ -9,7 +9,7 @@ const MainBody = () => {
     <div className="MainBody">
       <ImageBar />
       <Cards name="Recommended Projects" />
-      <div className=" w-full h-96 mt-16 mb-9">
+      <div className=" w-full h-96 mt-24 mb-4">
         <img src="./banner.jpg" className="w-full h-full object-c"/>
       </div>
       <Cards name="Featured Projects" />
