@@ -3,7 +3,6 @@ import React from "react";
 import Cards from "./Cards/Cards";
 import ImageBar from "./ImageBar/ImageBar";
 import Faq from "./FAQ";
-import Image from "next/image";
 
 const MainBody = () => {
   return (
