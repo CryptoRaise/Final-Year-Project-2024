@@ -17,7 +17,7 @@ const ImageBar = () => {
   }, [index]);
 
   return (
-    <div className="h-[87.6vh] relative  bg-black">
+    <div className="h-[89vh] relative  bg-black">
       <img
         key={index}
         src={`img${index}.jpg`}
