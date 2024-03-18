@@ -18,17 +18,17 @@ const page = ({ name }) => {
         showThumbs={false}
         stopOnHover = {true}
       >
-        <div className="grid grid-cols-3 gap-16 mt-10">
+        <div className="grid grid-cols-3 gap-16 my-10 mx-10">
           <Card name={"Treatment of cancer"} />
           <Card name={"Life-style Fit Club"} />
           <Card name={"Renewable Energy"} />
         </div>
-        <div className="grid grid-cols-3 gap-16 mt-10">
+        <div className="grid grid-cols-3 gap-16 mt-10 mx-10">
           <Card name={"Health of Tigers"} />
           <Card name={"Life-Club"} />
           <Card name={"Sustainable Energy"} />
         </div>
-        <div className="grid grid-cols-3 gap-16 mt-10">
+        <div className="grid grid-cols-3 gap-16 mt-10 mx-10">
           <Card name={"Treatment of cancer"} />
           <Card name={"Life-style Fit Club"} />
           <Card name={"Renewable Energy"} />
