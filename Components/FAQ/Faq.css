@@ -1,0 +1,30 @@
+/* styles.css */
+
+.faq-container {
+    width: 100%;
+    color: white;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-question {
+    cursor: pointer;
+    background-color: #1A374D;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .faq-question.active {
+    background-color: #1A374D;
+    color: #B1D0E0;
+  }
+  
+  .faq-answer {
+    background-color: #6998AB;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #406882;
+  }
+  

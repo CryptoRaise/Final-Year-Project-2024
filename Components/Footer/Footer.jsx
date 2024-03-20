@@ -6,7 +6,7 @@ import { BsWhatsapp } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className=" border-t-2 border-slate-100 text-slate-600 bg-white">
+    <footer className=" border-t-2 border-second text-fourth bg-first">
       <div className="grid grid-cols-3 max-w-5xl mx-auto mt-10">
         <div>
           <h1 className=" font-bold text-xl uppercase">About</h1>
