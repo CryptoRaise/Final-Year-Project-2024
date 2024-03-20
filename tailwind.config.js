@@ -17,6 +17,10 @@ module.exports = {
             "third" : "#9DB2BF",
             "fourth" : "#DDE6ED"
         },
+        fontFamily:{
+            rocker : ["var(--New_Rocker)"],
+            haviland: ["var(--Mr_De_Haviland)"],
+        }
         },
     },
     plugins: [],

@@ -2,12 +2,12 @@ import React from "react";
 
 const InitCamp = () => {
   return (
-    <div className="container h-[full] w-[60%] m-auto">
-      <h1 className="font-bold text-xl my-4 text-center">Campaign Details</h1>
+    <div className="container h-[full] w-[60%] m-auto border-2 rounded my-10 bg-white px-10">
+      <h1 className="font-bold text-xl my-4 text-center text-second uppercase">Campaign Details</h1>
       {/* <div className=""> */}
       <div className="px-2">
         <div className="mb-4">
-          <label htmlFor="name" className="leading-7 text-sm text-gray-600">
+          <label htmlFor="name" className="leading-7 text-sm text-slate-600">
             Campaign Name
           </label>
           <input
@@ -16,7 +16,7 @@ const InitCamp = () => {
             type="text"
             id="name"
             name="name"
-            className="w-full border-b-4 bg-white rounded border border-third focus:border-second focus:ring-2 focus:ring-third text-base outline-none text-second py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            className="w-full bg-white rounded border border-third focus:border-second focus:ring-2 focus:ring-third text-base outline-none text-second py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
         </div>
       </div>

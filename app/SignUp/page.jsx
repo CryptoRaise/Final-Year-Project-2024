@@ -21,7 +21,7 @@ const Signup = () => {
   return (
     <div className=" my-[5%]">
       <div className="container h-[full] w-[50%] m-auto p-3 bg-white">
-        <h1 className="font-bold text-2xl text-second my-4 text-center">
+        <h1 className="font-bold text-2xl text-second my-4 text-center uppercase">
           Signup
         </h1>
         <div className="px-2">

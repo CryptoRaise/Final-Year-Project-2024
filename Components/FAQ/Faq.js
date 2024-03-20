@@ -16,8 +16,7 @@ function FAQ({ data }) {
         <div key={index} className="faq-item">
           <div
             className={`faq-question ${activeIndex === index ? 'active' : ''}`}
-            onClick={() => toggleAccordion(index)}
-          >
+            onClick={() => toggleAccordion(index)}>
             {faq.question}
           </div>
           {activeIndex === index && (

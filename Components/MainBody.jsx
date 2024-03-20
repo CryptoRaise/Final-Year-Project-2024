@@ -2,7 +2,7 @@
 import React from "react";
 import Cards from "./Cards/Cards";
 import ImageBar from "./ImageBar/ImageBar";
-import Faq from "./FAQ/faq";
+import Faq from "./FAQ/Faq";
 
 const MainBody = () => {
   const faqData = [
