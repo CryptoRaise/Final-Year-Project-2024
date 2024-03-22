@@ -34,7 +34,7 @@ const Footer = () => {
           </h1>
           <div>
             <p>Newsletters</p>
-            <p>Kickstarter Project Updates</p>
+            <p>CryptoRaise Project Updates</p>
             <p>The Creative Independent</p>
             <p>Mobile apps</p>
             <p>Research</p>
@@ -43,7 +43,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-between p-10">
         <div className="text-[1rem] text-center font-bold text-xl">
-          Copyright © 2024 www.cryptoraise.com
+          Copyright © 2024 CryptoRaise
         </div>
         <div className="flex gap-10">
           <FaFacebookF className="hover:text-black cursor-pointer w-6 h-6" />

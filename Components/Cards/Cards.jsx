@@ -18,23 +18,15 @@ const page = ({ name }) => {
         stopOnHover = {true}
         className=" bg-second"
       >
-        <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 my-10 mx-10">
+        <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 my-10 mx-10">
           <Card name={"Treatment of cancer"} />
           <Card name={"Life-style Fit Club"} />
           <Card name={"Renewable Energy"} />
-          <Card name={"Renewable Energy"} />
         </div>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mt-10 mx-10">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-10 mx-10">
           <Card name={"Health of Tigers"} />
           <Card name={"Life-Club"} />
           <Card name={"Sustainable Energy"} />
-          <Card name={"Sustainable Energy"} />
-        </div>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mt-10 mx-10">
-          <Card name={"Treatment of cancer"} />
-          <Card name={"Life-style Fit Club"} />
-          <Card name={"Renewable Energy"} />
-          <Card name={"Renewable Energy"} />
         </div>
       </Carousel>
 
