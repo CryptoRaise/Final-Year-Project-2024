@@ -28,7 +28,7 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-5 font-bold ">
-          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first"><Link href="/InitCamp">Start Project</Link></div>
+          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first rounded-lg"><Link href="/InitCamp">Start Project</Link></div>
           <div className="  hover:text-third hover:underline transition-all duration-500 "><Link href="/LogIn">Log In</Link></div>
           <div className="  hover:text-third hover:underline transition-all duration-500 "><Link href="/SignUp">Sign Up</Link></div>
         </div>
