@@ -1,20 +1,34 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { MdArrowDropDown } from "react-icons/md";
 import Link from "next/link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [display, setDisplay] = useState(false);
+  const [isConnected, setIsConnected] = useState(false);
+  const [address, setAddress] = useState("0x1b.....970");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+  const toggleDisplay = () => {
+    setDisplay(!display);
+  };
+  const connect = () => {
+    setIsConnected(true);
+  };
+  const disconnect = () => {
+    setIsConnected(false);
   };
 
   return (
     <header className="px-5 top-0 sticky bg-first text-fourth py-4 z-10">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-5">
-          <Link href="/" className="font-bold text-md font-haviland text-5xl">CryptoRaise
+          <Link href="/" className="font-bold text-md font-haviland text-5xl">
+            CryptoRaise
           </Link>
           <div className="font-bold hover:text-third hover:underline transition-all duration-500 hidden md:flex">
             <Link href="/HIW">Work Mechanism</Link>
@@ -28,7 +42,7 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-5 font-bold ">
-          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first rounded-lg"><Link href="/InitCamp">Start Project</Link></div>
+          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first"><Link href="/InitCamp">Start Project</Link></div>
           <div className="  hover:text-third hover:underline transition-all duration-500 "><Link href="/LogIn">Log In</Link></div>
           <div className="  hover:text-third hover:underline transition-all duration-500 "><Link href="/SignUp">Sign Up</Link></div>
         </div>
@@ -49,8 +63,9 @@ const Header = () => {
             <Link href="/HIW">Work Mechanism</Link>
             <Link href="/Discover">Discover</Link>
             <Link href="/InitCamp">Start Project</Link>
-            <Link href="/LogIn">Log In</Link>
-            <Link href="/SignUp">Sign Up</Link>
+            <button className="bg-fourth text-first p-2 rounded-md hover:bg-gray-300">
+              Connect wallet
+            </button>
           </div>
         </div>
       )}
