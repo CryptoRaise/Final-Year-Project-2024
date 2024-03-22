@@ -10,14 +10,41 @@ const Header = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [address, setAddress] = useState("0x1b.....970");
 
+  const { ethereum } = window;
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
   const toggleDisplay = () => {
     setDisplay(!display);
   };
-  const connect = () => {
-    setIsConnected(true);
+  const connect = async () => {
+    try {
+      await ethereum.request({
+        method: "wallet_requestPermissions",
+        params: [
+          {
+            eth_accounts: {},
+          },
+        ],
+      });
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setAddress(accounts[0]);
+      setIsConnected(true);
+      // const balance = await ethereum.request({
+      //   method: "eth_getBalance",
+      //   params: [accounts[0], "latest"],
+      // });
+      // setBalance(ethers.formatEther(balance));
+    } catch (e) {
+      if (error.code === 4001) {
+        console.log("Permissions needed to continue.");
+      } else {
+        console.error(error);
+      }
+    }
   };
   const disconnect = () => {
     setIsConnected(false);
