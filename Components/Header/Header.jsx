@@ -68,18 +68,48 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center space-x-5 font-bold ">
-          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first"><Link href="/InitCamp">Start Project</Link></div>
-          <div className="  hover:text-third hover:underline transition-all duration-500 "><Link href="/LogIn">Log In</Link></div>
-          <div className="  hover:text-third hover:underline transition-all duration-500 "><Link href="/SignUp">Sign Up</Link></div>
-        </div>
-
-        <div className="md:hidden">
-          {!isOpen ? (
-            <FaBars className="cursor-pointer" onClick={toggleMenu} />
+        <div className="md:flex items-center space-x-5 font-bold ">
+          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first">
+            <Link href="/InitCamp">Start Project</Link>
+          </div>
+          {!isConnected ? (
+            <button
+              className="bg-fourth text-first p-2 rounded-md hover:bg-gray-300"
+              onClick={connect}
+            >
+              Connect wallet
+            </button>
           ) : (
-            <FaTimes className="cursor-pointer" onClick={toggleMenu} />
+            <div className="flex justify-center items-center">
+              <div className=" border-2 border-fourth px-4 py-2">{address}</div>
+              <MdArrowDropDown
+                className="text-lg cursor-pointer"
+                onClick={toggleDisplay}
+              />
+              {display && (
+                <div className="absolute top-[60%] right-1 flex flex-col bg-fourth text-first p-2 rounded-md">
+                  <Link href="/dashboard">
+                    <div className="pb-2 cursor-pointer hover:bg-gray-300 mb-2">
+                      Dashboard
+                    </div>
+                  </Link>
+                  <button
+                    className="bg-first text-fourth p-2 rounded-md hover:bg-blue-900"
+                    onClick={disconnect}
+                  >
+                    Disconnect wallet
+                  </button>
+                </div>
+              )}
+            </div>
           )}
+          <div className="md:hidden">
+            {!isOpen ? (
+              <FaBars className="cursor-pointer" onClick={toggleMenu} />
+            ) : (
+              <FaTimes className="cursor-pointer" onClick={toggleMenu} />
+            )}
+          </div>
         </div>
       </div>
 
