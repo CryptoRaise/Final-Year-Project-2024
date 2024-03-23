@@ -3,46 +3,92 @@ import React, { useState } from "react";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { MdArrowDropDown } from "react-icons/md";
 import Link from "next/link";
+import { BrowserProvider } from "ethers";
+const networks = {
+  sepolia: {
+    chainId: `0x${Number(11155111).toString(16)}`,
+    chainName: "Sepolia Test Network",
+    rpcUrls: ["https://eth-sepolia.g.alchemy.com/v2/"],
+    nativeCurrency: {
+      name: "SepoliaETH",
+      symbol: "SepETH",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://sepolia.etherscan.io/"],
+  },
+  polygon: {
+    chainId: `0x${Number(80001).toString(16)}`,
+    chainName: "Polygon Testnet",
+    rpcUrls: ["https://rpc-mumbai.maticvigil.com/"],
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "MATIC",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
+  },
+  polygonMainnet: {
+    chainId: `0x${Number(137).toString(16)}`,
+    chainName: "Polygon Mainnet",
+    rpcUrls: ["https://polygon-rpc.com/"],
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "MATIC",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://polygonscan.com/"],
+  },
+};
+
+const { ethereum } = window;
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [display, setDisplay] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
-  const [address, setAddress] = useState("0x1b.....970");
-
-  const { ethereum } = window;
+  const [address, setAddress] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   const toggleDisplay = () => {
     setDisplay(!display);
   };
+
   const connect = async () => {
     try {
-      await ethereum.request({
-        method: "wallet_requestPermissions",
-        params: [
-          {
-            eth_accounts: {},
-          },
-        ],
-      });
-      const accounts = await ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      setAddress(accounts[0]);
-      setIsConnected(true);
-      // const balance = await ethereum.request({
-      //   method: "eth_getBalance",
-      //   params: [accounts[0], "latest"],
-      // });
-      // setBalance(ethers.formatEther(balance));
+      await ethereum.request({ method: "eth_requestAccounts" });
+      const provider = new BrowserProvider(ethereum);
+      if (provider.network !== "sepolia") {
+        await ethereum.request({
+          method: "wallet_addEthereumChain",
+          params: [
+            {
+              ...networks["sepolia"],
+            },
+          ],
+        });
+        // if (provider.network !== "matic") {
+        //   await ethereum.request({
+        //     method: "wallet_addEthereumChain",
+        //     params: [
+        //       {
+        //         ...networks["polygonMainnet"],
+        //       },
+        //     ],
+        //   });
+        // }
+        const account = await provider.getSigner();
+        const Address = await account.getAddress();
+        setAddress(Address);
+        setIsConnected(true);
+      }
     } catch (e) {
-      if (error.code === 4001) {
-        console.log("Permissions needed to continue.");
+      if (e.code === 4001) {
+        console.error("Permissions needed to continue.");
       } else {
-        console.error(error);
+        console.error(e.message);
       }
     }
   };
@@ -81,7 +127,9 @@ const Header = () => {
             </button>
           ) : (
             <div className="flex justify-center items-center">
-              <div className=" border-2 border-fourth px-4 py-2">{address}</div>
+              <div className=" border-2 border-fourth px-4 py-2">
+                {address.slice(0, 6)}.......{address.slice(address.length - 4)}
+              </div>
               <MdArrowDropDown
                 className="text-lg cursor-pointer"
                 onClick={toggleDisplay}
