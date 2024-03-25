@@ -8,24 +8,24 @@ const networks = {
   sepolia: {
     chainId: `0x${Number(11155111).toString(16)}`,
     chainName: "Sepolia Test Network",
-    rpcUrls: ["https://eth-sepolia.g.alchemy.com/v2/"],
+    rpcUrls: ["https://rpc.sepolia.org/"],
     nativeCurrency: {
       name: "SepoliaETH",
-      symbol: "SepETH",
+      symbol: "ETH",
       decimals: 18,
     },
     blockExplorerUrls: ["https://sepolia.etherscan.io/"],
   },
   polygon: {
-    chainId: `0x${Number(80001).toString(16)}`,
-    chainName: "Polygon Testnet",
-    rpcUrls: ["https://rpc-mumbai.maticvigil.com/"],
+    chainId: `0x${Number(80002).toString(16)}`,
+    chainName: "Polygon Amoy Testnet",
+    rpcUrls: ["https://rpc-amoy.polygon.technology/"],
     nativeCurrency: {
       name: "MATIC",
       symbol: "MATIC",
       decimals: 18,
     },
-    blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
+    blockExplorerUrls: ["https://www.oklink.com/amoy"],
   },
   polygonMainnet: {
     chainId: `0x${Number(137).toString(16)}`,
@@ -60,6 +60,7 @@ const Header = () => {
     try {
       await ethereum.request({ method: "eth_requestAccounts" });
       const provider = new BrowserProvider(ethereum);
+
       if (provider.network !== "sepolia") {
         await ethereum.request({
           method: "wallet_addEthereumChain",
@@ -69,21 +70,35 @@ const Header = () => {
             },
           ],
         });
-        // if (provider.network !== "matic") {
-        //   await ethereum.request({
-        //     method: "wallet_addEthereumChain",
-        //     params: [
-        //       {
-        //         ...networks["polygonMainnet"],
-        //       },
-        //     ],
-        //   });
-        // }
-        const account = await provider.getSigner();
-        const Address = await account.getAddress();
-        setAddress(Address);
-        setIsConnected(true);
       }
+
+      // if (provider.network !== "matic") {
+      //   await ethereum.request({
+      //     method: "wallet_addEthereumChain",
+      //     params: [
+      //       {
+      //         ...networks["polygon"],
+      //       },
+      //     ],
+      //   });
+      // }
+
+      // if (provider.network !== "matic") {
+      //   await ethereum.request({
+      //     method: "wallet_addEthereumChain",
+      //     params: [
+      //       {
+      //         ...networks["polygonMainnet"],
+      //       },
+      //     ],
+      //   });
+      // }
+
+      const account = await provider.getSigner();
+      const Address = await account.getAddress();
+      // check balance
+      setAddress(Address);
+      setIsConnected(true);
     } catch (e) {
       if (e.code === 4001) {
         console.error("Permissions needed to continue.");
