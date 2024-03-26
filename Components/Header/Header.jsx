@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
-import { MdArrowDropDown } from "react-icons/md";
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import Link from "next/link";
 import { BrowserProvider } from "ethers";
 const networks = {
@@ -47,6 +47,24 @@ const Header = () => {
   const [display, setDisplay] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
   const [address, setAddress] = useState("");
+  const [isArrowDown, setIsArrowDown] = useState(true);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDisplay(false);
+      }
+    };
+
+    if (isOpen || display) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isOpen, display]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -54,6 +72,10 @@ const Header = () => {
 
   const toggleDisplay = () => {
     setDisplay(!display);
+  };
+
+  const toggleArrow = () => {
+    setIsArrowDown(!isArrowDown);
   };
 
   const connect = async () => {
@@ -118,7 +140,7 @@ const Header = () => {
           <Link href="/" className="font-bold text-md font-haviland text-5xl">
             CryptoRaise
           </Link>
-          <div className="font-bold hover:text-third hover:underline transition-all duration-500 hidden md:flex">
+          <div className="font-bold hover:text-th ird hover:underline transition-all duration-500 hidden md:flex">
             <Link href="/HIW">Work Mechanism</Link>
           </div>
           <div className="font-bold hover:text-third hover:underline transition-all duration-500 hidden md:flex">
@@ -130,25 +152,38 @@ const Header = () => {
         </div>
 
         <div className="md:flex items-center space-x-5 font-bold ">
-          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first">
+          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first max-[770px]:hidden">
             <Link href="/InitCamp">Start Project</Link>
           </div>
           {!isConnected ? (
             <button
-              className="bg-fourth text-first p-2 rounded-md hover:bg-gray-300"
+              className="bg-fourth text-first p-2 rounded-md hover:bg-gray-300 max-[770px]:hidden"
               onClick={connect}
             >
               Connect wallet
             </button>
           ) : (
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center"  ref={dropdownRef}>
               <div className=" border-2 border-fourth px-4 py-2">
                 {address.slice(0, 6)}.......{address.slice(address.length - 4)}
               </div>
-              <MdArrowDropDown
-                className="text-lg cursor-pointer"
-                onClick={toggleDisplay}
-              />
+              {isArrowDown ? ( // Using isArrowDown state to toggle between dropdown and dropup icons
+                <MdArrowDropDown // Displaying MdArrowDropDown icon when isArrowDown is true
+                  className="text-lg cursor-pointer"
+                  onClick={() => {
+                    toggleArrow();
+                    toggleDisplay();
+                  }}
+                />
+              ) : (
+                <MdArrowDropUp // Displaying MdArrowDropUp icon when isArrowDown is false
+                  className="text-lg cursor-pointer"
+                  onClick={() => {
+                    toggleArrow();
+                    toggleDisplay();
+                  }}
+                />
+              )}
               {display && (
                 <div className="absolute top-[60%] right-1 flex flex-col bg-fourth text-first p-2 rounded-md">
                   <Link href="/dashboard">
