@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { MdArrowDropDown } from "react-icons/md";
 import Link from "next/link";
@@ -99,6 +99,7 @@ const Header = () => {
       // check balance
       setAddress(Address);
       setIsConnected(true);
+      localStorage.setItem("isConnected", true);
     } catch (e) {
       if (e.code === 4001) {
         console.error("Permissions needed to continue.");
@@ -109,7 +110,13 @@ const Header = () => {
   };
   const disconnect = () => {
     setIsConnected(false);
+    localStorage.setItem("isConnected", false);
   };
+
+  useEffect(() => {
+    const lS = localStorage.getItem("isConnected");
+    setIsConnected(lS);
+  }, []);
 
   return (
     <header className="px-5 top-0 sticky bg-first text-fourth py-4 z-10">
