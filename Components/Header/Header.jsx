@@ -150,6 +150,8 @@ const Header = () => {
     setAddress("");
     localStorage.setItem("account", "");
     toast.success("Wallet Disconnected sucessfully");
+    setDisplay(false);
+    setIsArrowDown(true);
   };
 
   const falseClick = () => {
@@ -183,14 +185,14 @@ const Header = () => {
           {address === "" ? (
             !walletConnecting ? (
               <button
-                className="bg-fourth text-first p-2 rounded-md hover:bg-gray-300 max-[770px]:hidden"
+                className="bg-fourth text-first p-2 rounded-md hover:bg-gray-300 max-[770px]"
                 onClick={connect}
               >
                 Connect wallet
               </button>
             ) : (
               <button
-                className="text-first p-2 rounded-md bg-gray-300 max-[770px]:hidden"
+                className="text-first p-2 rounded-md bg-gray-300 max-[770px]"
                 onClick={falseClick}
               >
                 Connect wallet
