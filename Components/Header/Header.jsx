@@ -4,6 +4,9 @@ import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import Link from "next/link";
 import { BrowserProvider } from "ethers";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const networks = {
   sepolia: {
     chainId: `0x${Number(11155111).toString(16)}`,
@@ -45,9 +48,9 @@ const { ethereum } = window;
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [display, setDisplay] = useState(false);
-  const [isConnected, setIsConnected] = useState(false);
   const [address, setAddress] = useState("");
   const [isArrowDown, setIsArrowDown] = useState(true);
+  const [walletConnecting, setWalletConnecting] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -67,6 +70,11 @@ const Header = () => {
     };
   }, [isOpen, display]);
 
+  useEffect(() => {
+    const acc = localStorage.getItem("account");
+    setAddress(acc);
+  }, []);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -80,66 +88,73 @@ const Header = () => {
   };
 
   const connect = async () => {
-    try {
-      await ethereum.request({ method: "eth_requestAccounts" });
-      const provider = new BrowserProvider(ethereum);
+    setWalletConnecting(true);
+    if (typeof ethereum === "undefined") {
+      toast.error("Install Metamask first");
+    } else {
+      try {
+        await ethereum.request({ method: "eth_requestAccounts" });
+        const provider = new BrowserProvider(ethereum);
 
-      if (provider.network !== "sepolia") {
-        await ethereum.request({
-          method: "wallet_addEthereumChain",
-          params: [
-            {
-              ...networks["sepolia"],
-            },
-          ],
-        });
-      }
+        if (provider.network !== "sepolia") {
+          await ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                ...networks["sepolia"],
+              },
+            ],
+          });
+        }
 
-      // if (provider.network !== "matic") {
-      //   await ethereum.request({
-      //     method: "wallet_addEthereumChain",
-      //     params: [
-      //       {
-      //         ...networks["polygon"],
-      //       },
-      //     ],
-      //   });
-      // }
+        // if (provider.network !== "matic") {
+        //   await ethereum.request({
+        //     method: "wallet_addEthereumChain",
+        //     params: [
+        //       {
+        //         ...networks["polygon"],
+        //       },
+        //     ],
+        //   });
+        // }
 
-      // if (provider.network !== "matic") {
-      //   await ethereum.request({
-      //     method: "wallet_addEthereumChain",
-      //     params: [
-      //       {
-      //         ...networks["polygonMainnet"],
-      //       },
-      //     ],
-      //   });
-      // }
+        // if (provider.network !== "matic") {
+        //   await ethereum.request({
+        //     method: "wallet_addEthereumChain",
+        //     params: [
+        //       {
+        //         ...networks["polygonMainnet"],
+        //       },
+        //     ],
+        //   });
+        // }
 
-      const account = await provider.getSigner();
-      const Address = await account.getAddress();
-      // check balance
-      setAddress(Address);
-      setIsConnected(true);
-      localStorage.setItem("isConnected", true);
-    } catch (e) {
-      if (e.code === 4001) {
-        console.error("Permissions needed to continue.");
-      } else {
-        console.error(e.message);
+        const account = await provider.getSigner();
+        const Address = await account.getAddress();
+        // check balance
+        setAddress(Address);
+        localStorage.setItem("account", Address);
+        toast.success("Wallet Connected sucessfully");
+      } catch (e) {
+        if (e.code === 4001) {
+          toast.error("Permissions needed to continue");
+        } else {
+          toast.error(e.message);
+        }
       }
     }
-  };
-  const disconnect = () => {
-    setIsConnected(false);
-    localStorage.setItem("isConnected", false);
+    setWalletConnecting(false);
   };
 
-  useEffect(() => {
-    const lS = localStorage.getItem("isConnected");
-    setIsConnected(lS);
-  }, []);
+  const disconnect = () => {
+    setAddress("");
+    localStorage.setItem("account", "");
+    toast.success("Wallet Disconnected sucessfully");
+  };
+
+  const falseClick = () => {
+    toast.warn("Wallet connection request already pending");
+  };
 
   return (
     <header className="px-5 top-0 sticky bg-first text-fourth py-4 z-10">
@@ -154,22 +169,33 @@ const Header = () => {
           <div className="font-bold hover:text-third hover:underline transition-all duration-500 hidden md:flex">
             <Link href="/Discover">Discover</Link>
           </div>
-          <div className="font-bold hover:text-third hover:underline transition-all duration-500">
+          <div className="font-bold hover:text-third hover:underline transition-all duration-500 cursor-pointer">
             <FaSearch />
           </div>
         </div>
 
         <div className="md:flex items-center space-x-5 font-bold ">
-          <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first max-[770px]:hidden">
-            <Link href="/InitCamp">Start Project</Link>
-          </div>
-          {!isConnected ? (
-            <button
-              className="bg-fourth text-first p-2 rounded-md hover:bg-gray-300 max-[770px]:hidden"
-              onClick={connect}
-            >
-              Connect wallet
-            </button>
+          <Link href="/InitCamp">
+            <div className=" border-2 border-fourth px-4 py-2 hover:bg-fourth hover:text-first max-[770px]:hidden">
+              Start Project
+            </div>
+          </Link>
+          {address === "" ? (
+            !walletConnecting ? (
+              <button
+                className="bg-fourth text-first p-2 rounded-md hover:bg-gray-300 max-[770px]:hidden"
+                onClick={connect}
+              >
+                Connect wallet
+              </button>
+            ) : (
+              <button
+                className="text-first p-2 rounded-md bg-gray-300 max-[770px]:hidden"
+                onClick={falseClick}
+              >
+                Connect wallet
+              </button>
+            )
           ) : (
             <div className="flex justify-center items-center" ref={dropdownRef}>
               <div className=" border-2 border-fourth px-4 py-2">
